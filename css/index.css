@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: #999;
+  padding: 30px;
+  font-size: 35px;
+}
+
+/* The grid container */
+.grid-container {
+  display: grid;
+  grid-template-areas: 
+    'header header header header header header'
+    'left nav nav nav nav right'
+    'left title title title title right'
+    'left middle middle middle middle right' 
+    'footer footer footer footer footer footer';
+  /* grid-column-gap: 10px; - if you want gap between the columns */
+} 
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+.nav {
+  grid-area: nav;
+  text-align: center;
+  background-color: #ccc;
+}
+.nav a {
+  text-decoration: none;
+}
+.nav-item {
+  border: solid #000;
+  border-width: 0px 2px 0px 2px;
+  background-color: #fff;
+  width: 300px;
+}
+.title {
+  grid-area: title;
+  background-color: #999;
+  padding: 10px;
+  font-size: 35px;
+}
+.flex2 {
+  display: flex;
+  justify-content: space-between;
+}
+/* Style the left column */
+.left {
+  grid-area: left;
+}
+
+/* Style the middle column */
+.middle {
+  grid-area: middle;
+  padding: 20px;
+  display: flex;
+  justify-content:space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.item {
+  border: solid #000;
+  border-width: 4px 4px 0px 4px;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 400px;
+  line-height: 40px;
+}
+.icons {
+  border: solid #000;
+  border-width: 0px 4px 4px 4px;
+  background-color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 400px;
+}
+p img{
+  width: 40px;
+  height: 40px;
+  margin-left: .5em;
+  margin-right: .5em;
+}
+/* Style the right column */
+.right {
+  grid-area: right;
+}
+
+/* Style the footer */
+.footer {
+  grid-area: footer;
+  background-color: #999;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .grid-container  {
+    grid-template-areas: 
+      'header header header header header header'
+      'nav nav nav nav nav nav'
+      'title title title title title title'
+      'left left left left left left' 
+      'middle middle middle middle middle middle' 
+      'right right right right right right' 
+      'footer footer footer footer footer footer';
+  }
+}
